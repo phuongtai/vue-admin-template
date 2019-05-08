@@ -1,6 +1,8 @@
 import request from '@/utils/request'
 
+
 export function login(data) {
+  console.log(data)
   return request({
     url: '/user/login',
     method: 'post',
@@ -16,9 +18,25 @@ export function getInfo(token) {
   })
 }
 
+export function getUserInfo(user_id, token) {
+  return request({
+    url: `/user/${user_id}`,
+    method: 'get'
+  })
+}
+
 export function logout() {
   return request({
     url: '/user/logout',
     method: 'post'
   })
 }
+
+
+export function searchUser() {
+  return request({
+    url: '/user/search',
+    method: 'get'
+  })
+}
+

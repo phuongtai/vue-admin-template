@@ -24,6 +24,8 @@ module.exports = {
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
   devServer: {
+
+    https: true,
     port: port,
     open: true,
     overlay: {
@@ -73,6 +75,8 @@ module.exports = {
         symbolId: 'icon-[name]'
       })
       .end()
+
+    // config.module.rule('js').include.add(resolve('../static')).end()
 
     // set preserveWhitespace
     config.module
